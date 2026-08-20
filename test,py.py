@@ -22,10 +22,9 @@ data_df = yf.download('BBCA.JK', start='2023-01-01', end='2024-01-01', auto_adju
 data_feed = bt.feeds.PandasData(dataname=data_df)
 cerebro.adddata(data_feed)
 
-cerebro.broker.setcash(10000000.0) # Modal 10 Juta Rupiah
+cerebro.broker.setcash(10000000.0) 
 print(f'Modal Awal: Rp {cerebro.broker.getvalue():,.0f}')
 cerebro.run()
 print(f'Modal Akhir: Rp {cerebro.broker.getvalue():,.0f}')
 
-# 5. Munculkan Grafik Hasilnya
 cerebro.plot(style='candlestick')
